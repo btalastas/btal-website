@@ -1,23 +1,21 @@
-import logo from "./logo.svg";
+import * as React from "react";
+import CenteredTabs from "./components/CenteredTabs";
+import AboutMe from "./components/AboutMe";
+import School from "./components/School";
+import Resume from "./components/Resume";
 import "./App.css";
 
 function App() {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+  const tabContent = [<AboutMe />, <School />, null, <Resume />];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload. This is a test
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CenteredTabs value={value} onChange={handleChange} />
+      <body className="App-header">{tabContent[value]}</body>
     </div>
   );
 }
