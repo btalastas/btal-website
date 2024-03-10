@@ -28,7 +28,7 @@ function CourseworkGrid({ coursework }) {
   );
 }
 
-export default function NestedList() {
+export default function School() {
   const [open, setOpen] = React.useState(null);
 
   const handleClick = (id) => {
