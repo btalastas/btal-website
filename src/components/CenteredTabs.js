@@ -9,10 +9,24 @@ export default function CenteredTabs({ value, onChange }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const tabNames = ["About me", "School", "Hobbies and interests", "Resume"];
+  const tabNames = [
+    "About me",
+    "School",
+    "Hobbies and interests",
+    "Resume",
+    "Contact",
+  ];
 
   return (
-    <Box sx={{ width: "100%", bgcolor: "background.paper" }}>
+    <Box
+      sx={{
+        width: "100%",
+        bgcolor: "background.paper",
+        position: "fixed",
+        top: 0,
+        zIndex: 1100,
+      }}
+    >
       <Tabs
         value={value}
         onChange={onChange}
