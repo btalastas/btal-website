@@ -3,6 +3,8 @@ import CenteredTabs from "./components/CenteredTabs";
 import AboutMe from "./components/AboutMe";
 import School from "./components/School";
 import Resume from "./components/Resume";
+import HobbiesInterests from "./components/HobbiesInterests";
+import Contact from "./components/Contact";
 import "./App.css";
 
 function App() {
@@ -11,7 +13,13 @@ function App() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const tabContent = [<AboutMe />, <School />, null, <Resume />];
+  const tabContent = [
+    <AboutMe />,
+    <School />,
+    <HobbiesInterests />,
+    <Resume />,
+    <Contact />,
+  ];
   return (
     <div className="App">
       <CenteredTabs value={value} onChange={handleChange} />
