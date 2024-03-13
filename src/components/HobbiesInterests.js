@@ -46,23 +46,75 @@ const categories = {
     },
   ],
   Games: [
-    { name: "Fortnite", description: "" },
-    { name: "Bloodborne", description: "" },
-    { name: "Palworld", description: "" },
-    { name: "World Of Warcraft", description: "" },
-    { name: "Runescape", description: "" },
+    {
+      name: "Fortnite",
+      description: `Fortnite is a battle royale style game created by the game studio Epic Games. 
+      This innovative game took the concept of the battle royale genre and added a unique building mechanic to the game. 
+      This game has been a success since its release back in 2017. They have collaborated with different companies and included their IPs as skins you can purchase. 
+      Some examples would be Goku from Dragon Ball Z, The Teenage Mutant Ninja Turtles, and Peter Griffin from Family Guy to name a few. 
+      Epic Games is also the creator of the game engine Unreal Engine. 
+      With the development of the newest version of Unreal Engine, Epic Games allows creators to create their own maps through the game engine and publish them for the public to play. `,
+    },
+    {
+      name: "Palworld",
+      description: `Palworld takes the popular survival style games and includes the appeal of monster capturing into one. 
+      Players can build bases, capture pals, and have them work on your base. Different pals have different working traits. 
+      Which allows players to have different combinations of pals to improve the efficiency of their base. 
+      There has been a lot of controversy surrounding the release of this game. 
+      People think that the monsters in the game look very similar to the popular franchise Pokémon created by Nintendo. 
+      Nintendo cares deeply about their intellectual property. They have been known to send cease and desist orders to have them stop production. 
+      The fact that this game was able to release on steam shows that Nintendo didn’t have any grounds for a cease and desist. `,
+    },
+    {
+      name: "World Of Warcraft",
+      description: `World of Warcraft or known as WOW is a massively multiplayer online role-playing game. 
+      You can create a character of various races and different classes. Inspired by dungeon & dragons and its predecessor Warcraft III, WOW has been a popular online game for the past 20 years. 
+      Being able to work together with other players to tackle the same goal is what brings people to this game. `,
+    },
   ],
   Music: [
-    { name: "Rock/Metal", description: "" },
-    { name: "Rap/Hip-Hop/R&B", description: "" },
-    { name: "EDM", description: "" },
+    {
+      name: "Rock/Metal",
+      description: `Rock and metal are a genre that was popular in the 20th century but has taken a back seat in terms of popularity. 
+      I enjoy listening to the different instruments and vocals that each band produces. 
+      Some of the lyrics from the early 2000’s and 90’s resonates with me as well. 
+      Some bands that I still enjoy to this day are Bullet for my Valentine, My Chemical Romance, Green Day, Blink-182, and Paramore to name a few.`,
+    },
+    {
+      name: "Rap/Hip-Hop/R&B",
+      description: `The catchy beats and innovative lyrics are a reason why people enjoy this genre. 
+      Nodding to the beat, trying to remember complex lyrics, are some of the reasons why I enjoy this genre. 
+      Some artists that I enjoy listening to are Drake, ASAP Rocky, Juice WRLD, Tory Lanez, and Lil Peep.`,
+    },
+    {
+      name: "EDM",
+      description: `There has been a rise in popularity with EDM genre this century. EDM is an umbrella term that encompasses a lot of different styles of music. 
+      The usage of computer music software allows producers to create music without knowing how to play the instrument. 
+      This genre is popular in the festival scene as it allows people to come together and dance to music that they all enjoy. 
+      The main sub-genres that fall under EDM are dubstep, trap, drum-n-bass, techno, and house music. 
+      Each of these sub-genres also include different derivatizations that have appeared as time has passed.`,
+    },
   ],
   Cinemas: [
-    { name: "One Piece", description: "" },
-    { name: "86", description: "" },
-    { name: "Dark Knight Trilogy", description: "" },
-    { name: "The Prestige", description: "" },
-    { name: "(500) Days of Summer", description: "" },
+    {
+      name: "One Piece",
+      description: `One piece is by far my favorite story of any medium of all time. It was first published in 1997 by mangaka Eiichiro Oda. 
+      To this day it is still releasing new chapters every week. It is about a boy named Monkey D. Luffy who aspires to become the King of Pirates. 
+      The storytelling, worldbuilding, and character development, is what makes this story cherished by many worldwide.`,
+    },
+    {
+      name: "86",
+      description: `86 was originally a light novel series which was adapted into an anime series. 
+      This story takes place in a dystopian world where automated machines take the role of soldiers in the military. 
+      There are many though provoking themes within this story. Some include war and its impact, racism and discrimination, and dehumanization. 
+      The cinematography as well as what the character’s go though is what makes this anime one of my favorites.`,
+    },
+    {
+      name: "Dark Knight Trilogy",
+      description: `The trilogy directed by the famous Christopher Nolan is about the story of Bruce Wayne and his alter identity Batman. 
+      Out of all the superheroes in both the Marvel and DC universes, Batman is my favorite. The eccentric billionaire who is also a genius, can act as Gotham City’s vigilante. 
+      The fact that Batman doesn’t have any superpowers compared to the rest of superheroes is why he’s my favorite. Having to rely on his physical prowess and gadgets that he devised himself.`,
+    },
   ],
 };
 
