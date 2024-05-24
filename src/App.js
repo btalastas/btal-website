@@ -6,6 +6,7 @@ import Resume from "./components/Resume";
 import HobbiesInterests from "./components/HobbiesInterests";
 import Contact from "./components/Contact";
 import "./App.css";
+import Portfolio from "./components/Portfolio";
 
 function App() {
   const [value, setValue] = React.useState(0);
@@ -13,7 +14,9 @@ function App() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
   const tabContent = [
+    <Portfolio />,
     <AboutMe />,
     <School />,
     <HobbiesInterests />,

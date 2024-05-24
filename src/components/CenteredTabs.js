@@ -10,7 +10,8 @@ export default function CenteredTabs({ value, onChange }) {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const tabNames = [
-    "About me",
+    "Portfolio",
+    "About Me",
     "School",
     "Hobbies and interests",
     "Resume",
@@ -39,10 +40,6 @@ export default function CenteredTabs({ value, onChange }) {
         {tabNames.map((name, index) => (
           <Tab label={name} key={index} />
         ))}
-        {/* <Tab label="About me" />
-        <Tab label="School" />
-        <Tab label="Hobbies and interests" />
-        <Tab label="Resume" /> */}
       </Tabs>
     </Box>
   );
