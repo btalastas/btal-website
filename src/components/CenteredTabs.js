@@ -19,18 +19,24 @@ export default function CenteredTabs() {
     "Contact",
   ];
 
-  const tabPaths = [
-    "/about-me",
-    "/portfolio",
-    "/school",
-    "/hobbies-n-interests",
-    "/resume",
-    "/contact",
-  ];
+  const tabPaths = React.useMemo(
+    () => [
+      "/about-me",
+      "/portfolio",
+      "/school",
+      "/hobbies-n-interests",
+      "/resume",
+      "/contact",
+    ],
+    []
+  );
 
-  const getValueFromPath = (path) => {
-    return tabPaths.indexOf(path);
-  };
+  const getValueFromPath = React.useCallback(
+    (path) => {
+      return tabPaths.indexOf(path);
+    },
+    [tabPaths] // Only re-create if tabPaths change
+  );
 
   const [path, setPath] = React.useState(getValueFromPath(location.pathname));
 
@@ -40,7 +46,7 @@ export default function CenteredTabs() {
 
   React.useEffect(() => {
     setPath(getValueFromPath(location.pathname));
-  }, [location.pathname]);
+  }, [getValueFromPath, location.pathname]);
 
   return (
     <Box
