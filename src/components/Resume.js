@@ -1,6 +1,5 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
 function Resume() {
   return (

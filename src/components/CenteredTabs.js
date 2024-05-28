@@ -1,22 +1,46 @@
 import * as React from "react";
+import { Link, useLocation } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-export default function CenteredTabs({ value, onChange }) {
+export default function CenteredTabs() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
+  const location = useLocation();
   const tabNames = [
-    "Portfolio",
     "About Me",
+    "Portfolio",
     "School",
     "Hobbies and interests",
     "Resume",
     "Contact",
   ];
+
+  const tabPaths = [
+    "/about-me",
+    "/portfolio",
+    "/school",
+    "/hobbies-n-interests",
+    "/resume",
+    "/contact",
+  ];
+
+  const getValueFromPath = (path) => {
+    return tabPaths.indexOf(path);
+  };
+
+  const [path, setPath] = React.useState(getValueFromPath(location.pathname));
+
+  const handleChange = (event, newPath) => {
+    setPath(newPath);
+  };
+
+  React.useEffect(() => {
+    setPath(getValueFromPath(location.pathname));
+  }, [location.pathname]);
 
   return (
     <Box
@@ -29,8 +53,8 @@ export default function CenteredTabs({ value, onChange }) {
       }}
     >
       <Tabs
-        value={value}
-        onChange={onChange}
+        value={path}
+        onChange={handleChange}
         centered={!isMobile} // Center tabs on larger screens
         variant={isMobile ? "scrollable" : undefined} // Make tabs scrollable on smaller screens
         scrollButtons={isMobile ? "auto" : false} // Auto show scroll buttons on small screens
@@ -38,7 +62,7 @@ export default function CenteredTabs({ value, onChange }) {
         aria-label="scrollable centered tabs example"
       >
         {tabNames.map((name, index) => (
-          <Tab label={name} key={index} />
+          <Tab label={name} key={index} component={Link} to={tabPaths[index]} />
         ))}
       </Tabs>
     </Box>

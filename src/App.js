@@ -1,4 +1,5 @@
 import * as React from "react";
+import { BrowserRouter as Router, useRoutes } from "react-router-dom";
 import CenteredTabs from "./components/CenteredTabs";
 import AboutMe from "./components/AboutMe";
 import School from "./components/School";
@@ -8,26 +9,29 @@ import Contact from "./components/Contact";
 import "./App.css";
 import Portfolio from "./components/Portfolio";
 
-function App() {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  const tabContent = [
-    <Portfolio />,
-    <AboutMe />,
-    <School />,
-    <HobbiesInterests />,
-    <Resume />,
-    <Contact />,
+const AppRoutes = () => {
+  const routes = [
+    { path: "/about-me", element: <AboutMe /> },
+    { path: "/portfolio", element: <Portfolio /> },
+    { path: "/school", element: <School /> },
+    { path: "/hobbies-n-interests", element: <HobbiesInterests /> },
+    { path: "/resume", element: <Resume /> },
+    { path: "/contact", element: <Contact /> },
+    { path: "/", element: <AboutMe />, index: true },
   ];
+
+  return useRoutes(routes);
+};
+function App() {
   return (
-    <div className="App">
-      <CenteredTabs value={value} onChange={handleChange} />
-      <body className="App-header">{tabContent[value]}</body>
-    </div>
+    <Router>
+      <div className="App">
+        <CenteredTabs />
+        <div className="App-header">
+          <AppRoutes />
+        </div>
+      </div>
+    </Router>
   );
 }
 
