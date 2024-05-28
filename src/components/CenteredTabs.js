@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useNavigate, useLocation, Link } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -12,6 +12,7 @@ export default function CenteredTabs() {
   const location = useLocation();
   const navigate = useNavigate();
   const [path, setPath] = React.useState(location.pathname);
+  const [hoveredIndex, setHoveredIndex] = React.useState(null);
 
   const tabNames = [
     { name: "About Me", path: "/about-me" },
@@ -53,7 +54,28 @@ export default function CenteredTabs() {
         aria-label="scrollable centered tabs example"
       >
         {tabNames.map((name, index) => (
-          <Tab label={name.name} key={index} value={name.path} />
+          <Tab
+            label={name.name}
+            key={index}
+            value={name.path}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+            sx={{
+              transition: "color 0.3s, background-color 0.3s, filter 0.3s",
+              color:
+                hoveredIndex === index ? theme.palette.primary.main : "inherit",
+              backgroundColor:
+                hoveredIndex === index ? theme.palette.action.hover : "inherit",
+              filter:
+                hoveredIndex !== null && hoveredIndex !== index
+                  ? "blur(2px)"
+                  : "none",
+              "&:hover": {
+                color: theme.palette.primary.main,
+                backgroundColor: theme.palette.action.hover,
+              },
+            }}
+          />
         ))}
       </Tabs>
     </Box>

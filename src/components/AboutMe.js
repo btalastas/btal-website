@@ -13,7 +13,7 @@ export default function AboutMe() {
         mb: 4,
       }}
     >
-      <Box sx={{ flex: 1, boxShadow: 4 }}>
+      <Box sx={{ flex: 1, boxShadow: 10 }}>
         <Typography variant="h2">Bjorn N. Talastas</Typography>
         <Typography paragraph>
           First gen american with Filipino descent. Lorem Ipsem
@@ -24,7 +24,7 @@ export default function AboutMe() {
           flex: 1,
           borderLeft: 2,
           p: { xs: 1, sm: 2, md: 3 },
-          boxShadow: 4,
+          boxShadow: 10,
         }}
       >
         <MyTimeline />
