@@ -24,13 +24,13 @@ const timeline = [
     color: "warning",
   },
   {
-    date: "August 2007",
+    date: "August 2006",
     event:
       "Moved from Falls Church VA to Burke VA. Attended <b>Fair View Elementary</b> from 5th-6th grade",
     color: "warning",
   },
   {
-    date: "September 2008",
+    date: "September 2007",
     event: "Started school at <b>Robinson Secondary School</b>",
   },
   {
@@ -68,7 +68,7 @@ const timeline = [
   {
     date: "August 2021",
     event:
-      "Enrolled into <b>George Mason Univeristy</b><i> studying Computer Science</i>",
+      "Enrolled into <b>George Mason Univeristy</b> studying <i>Computer Science</i>",
   },
   {
     date: "August 2023",
@@ -96,7 +96,7 @@ const timeline = [
 export default function MyTimeline() {
   return (
     <Timeline>
-      {timeline.map((events) => (
+      {timeline.reverse().map((events) => (
         <TimelineItem>
           <TimelineOppositeContent variant="h5" sx={{ color: "primary.main" }}>
             {events.date}

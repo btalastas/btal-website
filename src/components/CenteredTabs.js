@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -10,43 +10,28 @@ export default function CenteredTabs() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const location = useLocation();
+  const navigate = useNavigate();
+  const [path, setPath] = React.useState(location.pathname);
+
   const tabNames = [
-    "About Me",
-    "Portfolio",
-    "School",
-    "Hobbies and interests",
-    "Resume",
-    "Contact",
+    { name: "About Me", path: "/about-me" },
+    { name: "Portfolio", path: "/portfolio" },
+    { name: "School", path: "/school" },
+    { name: "Hobbies and interests", path: "/hobbies-n-interests" },
+    { name: "Resume", path: "/resume" },
+    { name: "Contact", path: "/contact" },
   ];
-
-  const tabPaths = React.useMemo(
-    () => [
-      "/about-me",
-      "/portfolio",
-      "/school",
-      "/hobbies-n-interests",
-      "/resume",
-      "/contact",
-    ],
-    []
-  );
-
-  const getValueFromPath = React.useCallback(
-    (path) => {
-      return tabPaths.indexOf(path);
-    },
-    [tabPaths] // Only re-create if tabPaths change
-  );
-
-  const [path, setPath] = React.useState(getValueFromPath(location.pathname));
 
   const handleChange = (event, newPath) => {
     setPath(newPath);
+    navigate(newPath);
   };
 
   React.useEffect(() => {
-    setPath(getValueFromPath(location.pathname));
-  }, [getValueFromPath, location.pathname]);
+    if (path !== location.pathname) {
+      setPath(location.pathname);
+    }
+  }, [location, path]);
 
   return (
     <Box
@@ -68,7 +53,7 @@ export default function CenteredTabs() {
         aria-label="scrollable centered tabs example"
       >
         {tabNames.map((name, index) => (
-          <Tab label={name} key={index} component={Link} to={tabPaths[index]} />
+          <Tab label={name.name} key={index} value={name.path} />
         ))}
       </Tabs>
     </Box>
