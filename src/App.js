@@ -5,7 +5,6 @@ import AboutMe from "./components/AboutMe";
 import School from "./components/School";
 import Resume from "./components/Resume";
 import HobbiesInterests from "./components/HobbiesInterests";
-import Contact from "./components/Contact";
 import "./App.css";
 import Portfolio from "./components/Portfolio";
 
@@ -16,7 +15,6 @@ const AppRoutes = () => {
     { path: "/school", element: <School /> },
     { path: "/hobbies-n-interests", element: <HobbiesInterests /> },
     { path: "/resume", element: <Resume /> },
-    { path: "/contact", element: <Contact /> },
     { path: "/", element: <AboutMe />, index: true },
   ];
 

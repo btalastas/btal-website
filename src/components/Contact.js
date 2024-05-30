@@ -12,36 +12,53 @@ import {
 export default function Contact() {
   return (
     <Container>
-      <Box color="#cfe8fc">
-        <Grid
-          container
-          alignItems="center"
-          justifyContent="center"
-          style={{ minHeight: "100vh" }}
-          color="#cfe8fc"
-        >
-          <Grid item xs={12} sm={6} md={4}>
-            <List>
-              <ListItem>
-                <ListItemIcon>
-                  <Email color="primary" />
+      <Box
+        sx={{
+          color: "#cfe8fc",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Grid container alignItems="center" justifyContent="center">
+          <Grid item xs={12} sm={8} md={6}>
+            <List sx={{ display: "flex", justifyContent: "center" }}>
+              <ListItem
+                sx={{ display: "inline-flex", width: "auto", paddingRight: 2 }}
+              >
+                <ListItemIcon sx={{ color: "white" }}>
+                  <Email />
                 </ListItemIcon>
-                <Link href="mailto:btalasta@gmu.edu">Email me</Link>
+                <Link href="mailto:btalasta@gmu.edu" sx={{ color: "#7dc6e8" }}>
+                  Email
+                </Link>
               </ListItem>
-              <ListItem>
-                <ListItemIcon>
-                  <LinkedIn color="primary" />
+              <ListItem
+                sx={{ display: "inline-flex", width: "auto", paddingRight: 2 }}
+              >
+                <ListItemIcon sx={{ color: "whitesmoke" }}>
+                  <LinkedIn />
                 </ListItemIcon>
-                <Link href="https://www.linkedin.com/in/btalastas/">
+                <Link
+                  href="https://www.linkedin.com/in/btalastas/"
+                  sx={{ color: "#7dc6e8" }}
+                >
                   Linkedin
                 </Link>
               </ListItem>
 
-              <ListItem>
-                <ListItemIcon>
-                  <GitHub color="primary" />
+              <ListItem
+                sx={{ display: "inline-flex", width: "auto", paddingRight: 2 }}
+              >
+                <ListItemIcon sx={{ color: "whitesmoke" }}>
+                  <GitHub />
                 </ListItemIcon>
-                <Link href="https://github.com/btalastas">Github</Link>
+                <Link
+                  href="https://github.com/btalastas"
+                  sx={{ color: "#7dc6e8" }}
+                >
+                  Github
+                </Link>
               </ListItem>
             </List>
           </Grid>

@@ -20,7 +20,6 @@ export default function CenteredTabs() {
     { name: "School", path: "/school" },
     { name: "Hobbies and interests", path: "/hobbies-n-interests" },
     { name: "Resume", path: "/resume" },
-    { name: "Contact", path: "/contact" },
   ];
 
   const handleChange = (event, newPath) => {

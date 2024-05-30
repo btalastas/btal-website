@@ -42,7 +42,7 @@ const projects = {
     1: {
       title: "Detecting Handwritten Images",
       Description: "Placeholder",
-      url: "",
+      url: "https://github.com/btalastas/classification-of-handwritten-numbers",
     },
     2: {
       title: "Detecting Sign Language",
